@@ -13,13 +13,13 @@ export async function POST(req){
         "svix-signature": headerPayload.get("svix-signature"),
     };
 
-    //Get the Payload and Verify It
+    // Get the payload and verify it
 
     const payload = await req.json();
     const body = JSON.stringify(payload);
     const {data, type} = wh.verify(body, svixHeaders)
 
-    //Prepare the user data to be saved in the database
+    // Prepare the user data to be saved in the database
 
     const userData = {
         _id: data.id,
@@ -34,7 +34,7 @@ export async function POST(req){
         case 'user.created':
             await User.create(userData)
             break;
-        
+    
         case 'user.updated':
             await User.findByIdAndUpdate(data.id, userData)
             break;
@@ -42,10 +42,10 @@ export async function POST(req){
         case 'user.deleted':
             await User.findByIdAndDelete(data.id)
             break;
-        
+    
         default:
             break;
     }
 
-    return NextRequest.json({message: "Event recived"})
+    return NextRequest.json({message: "Event received"});
 }
