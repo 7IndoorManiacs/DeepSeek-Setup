@@ -15,7 +15,7 @@ export async function POST(req){
 
     //Get the Payload and Verify It
 
-    const payload = await req.js;
+    const payload = await req.json();
     const body = JSON.stringify(payload);
     const {data, type} = wh.verify(body, svixHeaders)
 
