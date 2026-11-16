@@ -9,9 +9,17 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^7.10.0",
+    "axios": "^1.21.1",
+    "mongoose": "^9.12.1",
     "next": "16.4.6",
+    "openai": "^7.57.0",
+    "prismjs": "^1.30.0",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-hot-toast": "^2.6.1",
+    "react-markdown": "^10.1.0",
+    "svix": "^2.10.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
